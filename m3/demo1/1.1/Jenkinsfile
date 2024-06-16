@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "home02"}
+    agent any
     environment {
         VERSION = "0.1.0"        
         VERSION_RC = "rc.2"
