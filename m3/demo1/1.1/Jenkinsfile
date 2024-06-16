@@ -21,13 +21,7 @@ pipeline {
               sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_RC}" ./m3/src/Pi.Web/Pi.Web.csproj'
             }
         }
-        stage('Unit Test') {
-            agent {
-              docker {
-              image 'maven'
-              label 'agent01'
-              }
-            }
+        stage('Unit Test') {            
             steps {
               dir('./m3/src') {
                 sh '''
