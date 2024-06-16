@@ -22,6 +22,12 @@ pipeline {
             }
         }
         stage('Unit Test') {
+            agent {
+              docker {
+              image 'maven'
+              label 'agent01'
+              }
+            }
             steps {
               dir('./m3/src') {
                 sh '''
